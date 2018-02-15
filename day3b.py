@@ -4,12 +4,11 @@ import sys
 
 def main(argv):
     #get input, otherwise prompt for input
-    inputSquare = int(289326)
-    #if (len(argv) == 2):
-     #   inputSquare = int(argv[1])
-    #else:
-     #   print("Please specify an input argument (day3.py [input])")
-      #  return
+    if (len(argv) == 2):
+        inputSquare = int(argv[1])
+    else:
+       print("Please specify an input argument (day3.py [input])")
+       return
 
     #find first square that contains a value larger than input
 
