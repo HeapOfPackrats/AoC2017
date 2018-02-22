@@ -16,6 +16,7 @@ def main(argv):
     cycles = 0
     cycleSize = 0
     repeat = False
+    inputFile.close()
 
     #continue memory allocation cycles until a repeat config occurs
     while repeat == False:

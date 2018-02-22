@@ -15,6 +15,7 @@ def main(argv):
     jumpCount = 0
     index = 0
     offset = 0
+    inputFile.close()
 
     while index <= (len(jumpList) - 1):
         offset = jumpList[index]

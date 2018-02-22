@@ -15,6 +15,7 @@ def main(argv):
     jumpCount = 0
     index = 0
     offset = 0
+    inputFile.close()
 
     while index <= (len(jumpList) - 1):
         offset = jumpList[index]
@@ -25,6 +26,7 @@ def main(argv):
         index += offset
         jumpCount += 1
 
+    inputFile.close()
     print("It took {} steps to reach the exit".format(jumpCount))
 
 if __name__ == "__main__":

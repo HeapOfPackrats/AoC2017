@@ -15,6 +15,7 @@ def main(argv):
     memBanksLog = list()
     cycles = 0
     repeat = False
+    inputFile.close()
 
     #continue memory allocation cycles until a repeat config occurs
     while repeat == False:
