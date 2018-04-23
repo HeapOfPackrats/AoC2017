@@ -19,15 +19,15 @@ def main():
 def parseConnects(inputFile):
     connections = OrderedDict()
     for line in inputFile:
-        line = line.split(sep=" <-> ") #[k, "v1, v2, v\n"]
+        line = line.split(sep=" <-> ") #[k, "v1, v2, v3\n"]
         k, v = int(line[0]), set(map(int, line[1].strip().split(sep=", ")))
-        connections.update({k:v}) #{k, {v1, v2, etc.}}
+        connections.update({k:v}) #{k:[v1, v2, etc.]}
     return connections
 
 #for each program which starts a group and has neighbors, recurse through neighbors to gather group members
 def findGroupMembers(connections, groups, groupName, program, checked=None):
     if checked is None:
-        checked = set({groupName}) #setting a new pointer for each call from countConnectsTo0() as per https://reinout.vanrees.org/weblog/2012/04/18/default-parameters.html
+        checked = set({groupName}) #setting a new pointer for each call from buildGroups() as per https://reinout.vanrees.org/weblog/2012/04/18/default-parameters.html
     for connection in connections[program]:
         if connection != groupName and connection not in checked:
             checked.add(connection)

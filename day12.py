@@ -16,9 +16,9 @@ def main():
 def parseConnects(inputFile):
     connections = dict()
     for line in inputFile:
-        line = line.split(sep=" <-> ") #[k, "v1, v2, v\n"]
+        line = line.split(sep=" <-> ") #[k, "v1, v2, v3\n"]
         k, v = int(line[0]), set(map(int, line[1].strip().split(sep=", ")))
-        connections.update({k:v}) #{k, {v1, v2, etc.}}
+        connections.update({k:v}) #{k:[v1, v2, etc.]}
     return connections
 
 #for each program, recurse through trees of connections to see if program 0 is connected
