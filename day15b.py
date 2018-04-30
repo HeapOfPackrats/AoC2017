@@ -45,9 +45,7 @@ def makeGenerator(startVal, factor, divisor):
 def judgeVals(genA, genB, iterations):
     count = 0
     for i in range(iterations):
-        bitA = bin(genA())
-        bitB = bin(genB())
-        if bitA[-16:] == bitB[-16:]:
+        if genA() & 0xffff == genB() & 0xffff:
             count += 1
     return count
 
